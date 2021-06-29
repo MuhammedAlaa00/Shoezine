@@ -1,0 +1,77 @@
+.container 
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.contain-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: center;
+    height: 100%;
+}
+/* @media (min-width: 600px)and (max-width:990px){
+    .MuiContainer-maxWidthSm {
+        max-width: 600px;
+        display: flex;
+    }
+} */
+.MuiOutlinedInput-input{
+    padding: 13.5px 14px;
+}
+.MuiInputBase-root,
+.MuiInputLabel-formControl{
+    font-size: 1.000009rem ;
+    font-weight: 600 ;
+}
+.MuiInputLabel-outlined{
+    transform: translate(14px, 16px) scale(1);
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink{
+    transform:translate(14px , -5px) scale(0.75);
+}
+.head {
+    font-size: clamp(16px, 8vw, 28px);
+    text-transform: capitalize;
+}
+.MuiPaper-elevation3,
+.MuiPaper-elevation1
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left-paper{
+    border-top-right-radius: 0;
+    border-bottom-left-radius:0;
+}
+.right-paper{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.Checked{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.Checked .checkLink{
+    margin-left: 10px;
+    font-weight: 700;
+}
+.checkLink:hover{
+    text-decoration: none;
+}
+.BrandImg{
+    background-image: url('../imgs/pexels-antonio-dillard-4462781.jpg');
+    background-position: center;
+    background-size: cover;
+}
+@media (min-width: 600px){
+.MuiContainer-maxWidthSm {
+    max-width: 800px;
+}}

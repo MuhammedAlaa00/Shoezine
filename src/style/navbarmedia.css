@@ -1,0 +1,13 @@
+.center-toolbar{
+    justify-content: center;
+}
+@media(min-width:320px) and (max-width:767px)
+{
+    .MuiButton-text{
+        padding: 6px 4px !important;
+        font-size: 0.55rem !important;
+        letter-spacing: unset !important;
+        min-width: unset !important;
+
+    }
+}
