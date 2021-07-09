@@ -23,30 +23,55 @@ function Registercomponent() {
   const SignInpassRef = useRef();
   const userNameRef = useRef();
   const [Error, setError] = useState('');
+  const [SignInEmailError, setSignInEmailError] = useState('')
+  const [SignInPassError, setSignInPassError] = useState("")
+  const [SignUpEmailError, setSignUpEmailError] = useState('')
   const [Loading, setLoading] = useState(false);
   const {SignUp , SignIn} = AuthContextConfigMethod();
   async function handleSignUp (e) {
     e.preventDefault();
     try {
       setError('')
+      setSignUpEmailError('')
       setLoading(true)
       await SignUp(emailRef.current.value , userNameRef.current.value , passRef.current.value)
       history.push('/Home')
-    } catch {
-      setError('failed to sign Up')
+    } catch (err){
+      switch (err.code) {
+        case "auth/invalid-email":
+          setSignUpEmailError('invalid-email')
+          break;
+      
+        default:
+          break;
+      }
+      console.log(err);
     }
     setLoading(false)
   }
   async function handleSignIn (e) {
     e.preventDefault()
     try {
-      setError('')
+      setSignInEmailError('')
+      setSignInPassError('')
       setLoading(true)
       await SignIn(SignInmailRef.current.value , SignInpassRef.current.value)
       history.push('/Home')
-    } catch {
-      setError('failed to sign in')
+    }catch(err) {
+       // eslint-disable-next-line default-case
+       switch (err.code) {
+         case "auth/invalid-email":
+          case "auth/user-not-found" :
+            setSignInEmailError('Mail not found')
+           break;
+           case "auth/wrong-password" : 
+           setSignInPassError("Wrong Password")
+              
+       }
     }
+    // catch{
+    //   setError('failed to sign in')
+    // }
     setLoading(false)
   }
   const {Theme ,ThemeChange} = UseTheme()
@@ -115,16 +140,17 @@ function Registercomponent() {
                   </Grid>
                   <Grid container className={classes.SecConatiner}>
                     <form autoComplete="off" className={classes.Form}>
-                      <TextField inputRef={emailRef} className={classes.textField} id="outlined-userName" label="mail" variant="outlined" color="secondary"
+                      <TextField inputRef={emailRef} className={classes.textField} id="" label="mail" variant="outlined" color="secondary"
                       autoFocus
                       required
                       type="text"
+                      helperText={SignUpEmailError}
                       />
-                      <TextField inputRef={userNameRef} className={classes.textField} id="outlined-userName" label="Username" variant="outlined" color="secondary"
+                      <TextField inputRef={userNameRef} className={classes.textField} id="" label="Username" variant="outlined" color="secondary"
                       required
                       type="text"
                       />
-                      <TextField inputRef={passRef} className={classes.textField} id="outlined-pass" label="Password" variant="outlined" color="secondary"
+                      <TextField inputRef={passRef} className={classes.textField} id="" label="Password" variant="outlined" color="secondary"
                       required
                       type="password"
                       helperText={Error}
@@ -162,11 +188,12 @@ function Registercomponent() {
                       autoFocus
                       required
                       type="text"
+                      helperText = {SignInEmailError}
                       />
                       <TextField inputRef={SignInpassRef} className={classes.textField} id="outlined-pass" label="Password" variant="outlined" color="secondary"
                       required
                       type="password"
-                      helperText = {Error}
+                      helperText = {SignInPassError}
                       />
                       <div className="Checked"><p>Dont have account ?</p> 
                       <Link href="" className="checkLink" onClick={(e)=>{e.preventDefault()
