@@ -59,6 +59,7 @@ function Travel() {
             <LazyLoadImage
                 effect="blur"
                 height="300px"
+                width="100%"
                 src={image.urls.full}
                 alt="image"
                 className="img"

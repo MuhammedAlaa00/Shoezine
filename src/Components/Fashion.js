@@ -49,26 +49,35 @@ function Fashion() {
           console.log(err);
         })
     }, [pagenextNumb]);
-    const getEveryImage = images.slice(0,8).map(image =>
-    <Grid className={`${classes.grid} grid`} item xs={12} sm={6} md={4} lg={3} key={image.id}>
-      <Card className={classes.mainCard}>
-        <CardMedia className={classes.media}>
-          {!loading 
-            ? 
-            <Skeleton variant="rect" height={300} width="100%" /> 
-            : 
-            <LazyLoadImage
+    const getEveryImage = images.slice(0, 8).map((image) => (
+      <Grid
+        className={`${classes.grid} grid`}
+        item
+        xs={12}
+        sm={6}
+        md={4}
+        lg={3}
+        key={image.id}
+      >
+        <Card className={classes.mainCard}>
+          <CardMedia className={classes.media}>
+            {!loading ? (
+              <Skeleton variant="rect" height={300} width="100%" />
+            ) : (
+              <LazyLoadImage
                 effect="blur"
                 height="300px"
+                width="100%"
                 src={image.urls.full}
                 alt="image"
                 className="img"
                 placeholder={<Skeleton variant="rect" height={300} />}
               />
-          }
-        </CardMedia>
-      </Card>
-    </Grid>)
+            )}
+          </CardMedia>
+        </Card>
+      </Grid>
+    ));
     return (
         <div>
             {userData ?
