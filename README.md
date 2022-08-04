@@ -21,8 +21,8 @@ Shoezine is a simple galary provides high quality and completely free stock phot
 ## Usage
 - open [Demo](https://shoezine.netlify.app/)
 ```
-- Register using email, user name, password 
-- OR direct sign in by 
+- Sign Up Using Email, User name, Password 
+- OR Direct Sign In by 
     - Mail: user@user.com
     - Password: 123456
 ```
