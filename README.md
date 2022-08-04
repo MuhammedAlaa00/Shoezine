@@ -9,7 +9,7 @@ Shoezine is a simple galary provides high quality and completely free stock phot
 
 ## Built With
 - [React js](https://reactjs.org/)
-    - React Hooks
+    - React Hooks API
     - React Router Dom
 - [Firebase](https://firebase.google.com/)
     - Authentication
@@ -21,7 +21,8 @@ Shoezine is a simple galary provides high quality and completely free stock phot
 ## Usage
 - open [Demo](https://shoezine.netlify.app/)
 ```
-- register using email, user name, password or direct sign in by 
+- Register using email, user name, password 
+- OR direct sign in by 
     - Mail: user@user.com
     - Password: 123456
 ```
