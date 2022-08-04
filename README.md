@@ -19,8 +19,8 @@ Shoezine is a simple galary provides high quality and completely free stock phot
 - [Material UI](https://mui.com/)
 
 ## Usage
+- open [Demo](https://shoezine.netlify.app/)
 ```
-- open the link attached in the repo 
 - register using email, user name, password or direct sign in by 
     - Mail: user@user.com
     - Password: 123456
