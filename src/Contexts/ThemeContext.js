@@ -17,5 +17,5 @@ const value = {
     )
 }
 
-export default ThemeContext
+export default React.memo(ThemeContext);
 
