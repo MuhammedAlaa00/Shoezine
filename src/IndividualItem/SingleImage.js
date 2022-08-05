@@ -7,6 +7,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useStyles } from "../Material-UI-Styles/Category_styles";
 function SingleImage({ Images, loading }) {
+  const mainCardStyle = {
+    margin: "15px",
+  };
   const classes = useStyles();
   return (
     <Grid container className="centerContainer">
@@ -21,7 +24,7 @@ function SingleImage({ Images, loading }) {
             lg={3}
             key={image.id}
           >
-            <Card className={classes.mainCard}>
+            <Card style={{ mainCardStyle }}>
               <CardMedia className={classes.media}>
                 {!loading ? (
                   <Skeleton variant="rect" height={300} width="100%" />
