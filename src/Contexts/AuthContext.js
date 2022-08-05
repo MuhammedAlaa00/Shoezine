@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../fire";
 import { generateUserDocument } from "./firestore";
-import { firestore } from "../fire";
 const AuthContextConfig = React.createContext();
 export function AuthContextConfigMethod() {
   return useContext(AuthContextConfig);
