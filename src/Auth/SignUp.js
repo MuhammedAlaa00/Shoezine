@@ -66,7 +66,7 @@ function SignUp({ checked, setChecked }) {
                       <h2 className={`${classes.header} head`}>sign up</h2>
                     </div>
                   </Grid>
-                  <Grid item xs={4}>
+                  {/* <Grid item xs={4}>
                     <div className={classes.switch}>
                       <Switch
                         checked={Theme}
@@ -74,7 +74,7 @@ function SignUp({ checked, setChecked }) {
                         color="secondary"
                       />
                     </div>
-                  </Grid>
+                  </Grid> */}
                 </Grid>
                 <Grid container className={classes.SecConatiner}>
                   <form autoComplete="off" className={classes.Form}>
