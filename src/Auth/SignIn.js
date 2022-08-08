@@ -58,7 +58,7 @@ function SignIn({ checked, setChecked }) {
     <StylesProvider injectFirst>
       <Container maxWidth="sm" className="container">
         <Grid container className="contain-container">
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} className="ExceptionMuiItem">
             <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
               <Paper elevation={3} className={`${classes.paper} left-paper`}>
                 <Grid container className={classes.mainGrid}>
@@ -143,7 +143,7 @@ function SignIn({ checked, setChecked }) {
               </Paper>
             </Slide>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} className="ExceptionMuiItem">
             <Hidden only="xs">
               <Paper
                 elevation={1}
