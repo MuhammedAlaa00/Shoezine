@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   grid: {
-    margin: "20px",
+    margin: "10px !important",
   },
   mainCard: {
     maxWidth: 345,

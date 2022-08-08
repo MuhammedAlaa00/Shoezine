@@ -3,9 +3,6 @@
   width: 100%;
   object-fit: cover;
 }
-.MuiGrid-item:not(".ExceptionMuiItem") {
-  margin: 10px !important;
-}
 .centerContainer {
   justify-content: center;
 }
