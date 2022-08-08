@@ -17,6 +17,7 @@ function AuthContext({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
   function LogOut() {
+    setCurrentUser();
     return auth.signOut();
   }
   useEffect(() => {
@@ -25,7 +26,11 @@ function AuthContext({ children }) {
         try {
           const thisUser = await generateUserDocument(user);
           setuserData(thisUser);
-          setCurrentUser(user);
+          if (user) {
+            setCurrentUser(user);
+          } else {
+            setCurrentUser();
+          }
           setLoading(false);
         } catch (err) {
           console.error(err);

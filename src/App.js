@@ -9,24 +9,29 @@ import Decoration from "./Components/Decoration";
 import Fashion from "./Components/Fashion";
 import Travel from "./Components/Travel";
 import AuthContainer from "./Auth/AuthContainer";
+import PrivateRoute from "./PrivateRoute/Private_Route";
 function App() {
   return (
-    <AuthContext>
-      <ThemeContext>
-        <AppMainTheme>
-          <Router>
-            <Routes>
-              <Route exact path="/" element={<AuthContainer/>} />
-              <Route path="/Home" element={<Home/>} />
-              <Route path="/Clothes" element={<Clothes/>} />
-              <Route path="/Decoration" element={<Decoration/>} />
-              <Route path="/Fashion" element={<Fashion/>} />
-              <Route path="/Travel" element={<Travel/>} />
-            </Routes>
-          </Router>
-        </AppMainTheme>
-      </ThemeContext>
-    </AuthContext>
+    <>
+      <AuthContext>
+        <ThemeContext>
+          <AppMainTheme>
+            <Router>
+              <Routes>
+                <Route exact path="/" element={<PrivateRoute />}>
+                  <Route exact path="/" element={<AuthContainer />} />
+                </Route>
+                <Route path="/Home" element={<Home />} />
+                <Route path="/Clothes" element={<Clothes />} />
+                <Route path="/Decoration" element={<Decoration />} />
+                <Route path="/Fashion" element={<Fashion />} />
+                <Route path="/Travel" element={<Travel />} />
+              </Routes>
+            </Router>
+          </AppMainTheme>
+        </ThemeContext>
+      </AuthContext>
+    </>
   );
 }
 

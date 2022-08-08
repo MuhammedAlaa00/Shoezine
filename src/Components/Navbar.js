@@ -28,6 +28,7 @@ function Navbar() {
   const { LogOut, userData } = AuthContextConfigMethod();
   async function handleLogOut() {
     await LogOut();
+    console.log("loged out");
     Navigate("/");
   }
   return (
